@@ -33,6 +33,8 @@ import errno
 from time import sleep,time
 import argparse
 
+PATH = os.getcwd()+"/external_tools/dns2proxy/"
+print PATH
 
 consultas = {}
 spoof = {}
@@ -41,16 +43,16 @@ nospoof = []
 nospoofto = []
 victims = []
 
-LOGREQFILE = "dnslog.txt"
-LOGSNIFFFILE = "snifflog.txt"
-LOGALERTFILE = "dnsalert.txt"
-RESOLVCONF = "resolv.conf"
+LOGREQFILE = PATH + "dnslog.txt"
+LOGSNIFFFILE = PATH + "snifflog.txt"
+LOGALERTFILE = PATH + "dnsalert.txt"
+RESOLVCONF = PATH + "resolv.conf"
 
-victim_file = "victims.cfg"
-nospoof_file = "nospoof.cfg"
-nospoofto_file = "nospoofto.cfg"
-specific_file = "spoof.cfg"
-dominios_file = "domains.cfg"
+victim_file = PATH + "victims.cfg"
+nospoof_file = PATH + "nospoof.cfg"
+nospoofto_file = PATH + "nospoofto.cfg"
+specific_file = PATH + "spoof.cfg"
+dominios_file = PATH + "domains.cfg"
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-N", "--noforward", help="DNS Fowarding OFF (default ON)", action="store_true")
